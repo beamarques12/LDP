@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="calculadora">
+    <h1>Calculadora</h1><br>
+        <input type="text" value="" id="display">
+        <button id="igual" class="botao_op" onclick="resultado()"> = </button>
+        <button id="limpar" class="botao_op" onclick="limpar()"> CL </button>
+        <div id="botoes">
+            <!-- onclick: serve para determinar uma função para cada botão.
+            por exemplo: no botão com value 1, a função digitar mostrará 1-->
+        <button class="botao" value="1" onclick="digitar('1')"> 1 </button>
+        <button class="botao" value="2" onclick="digitar('2')"> 2 </button>
+        <button class="botao" value="3" onclick="digitar('3')"> 3 </button><br>
+        <button class="botao" value="4" onclick="digitar('4')"> 4 </button>
+        <button class="botao" value="5" onclick="digitar('5')"> 5 </button>
+        <button class="botao" value="6" onclick="digitar('6')"> 6 </button><br>
+        <button class="botao" value="7" onclick="digitar('7')"> 7 </button>
+        <button class="botao" value="8" onclick="digitar('8')"> 8 </button>
+        <button class="botao" value="9" onclick="digitar('9')"> 9 </button><br>
+        <button class="botao" value="0" onclick="digitar('0')"> 0 </button>
+        <button class="botao_op" value="somar" onclick="digitar('+')"> + </button>
+        <button class="botao_op" value="subtrair" onclick="digitar('-')"> - </button>
+        <button class="botao_op" value="dividir" onclick="digitar('/')"> ÷ </button>
+        <button class="botao_op" value="multiplicar" onclick="digitar('*')"> x </button>
+        </div>
+        </div>
+</body>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #display{
+        text-align: right;
+        width: 140px;
+        height: 30px;
+        font-size: 20px;
+    }
+    
+    #botoes{
+        margin-top: 10px;
+    }
+
+    #calculadora{
+        text-align: center;
+        }
+
+    #limpar{
+        background-color: rgb(231, 105, 21);
+    }
+
+    #igual{
+        background-color: rgb(74, 154, 215);
+        font-weight: bold;
+    }
+
+    #limpar, #igual{
+        padding: 2px;
+        font-size: 20px;
+    }
+    
+    .botao{
+        height: 40px;
+        width: 70px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 2px;
+    }
+    
+    .botao_op{
+        height: 40px;
+        width: 33px;
+    }
+    .botao, .botao_op, #igual, #limpar{
+        box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.5);
+        border: 0;
+        border-radius: 10;
+        cursor: pointer;
+        font-size: 25px;
+    }
+</style>
+<script>
+    const input = document.getElementById("display")
+    //função para "adicionar" valor no display
+    function digitar(valor){
+        input.value = input.value + valor;
+    }
+    //função para limpar o display
+    function limpar(){
+        input.value = "";
+    }
+    //função para calcular
+    function resultado(){
+        input.value = eval(input.value);
+    }
+    //eval: serve para realizar operações que são digitadas através da função "digitar"
+</script>
+</html>
