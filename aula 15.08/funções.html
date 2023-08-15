@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+    
+    <script>
+        // criar função
+        function nome(){
+            //codigo
+        }
+        //FUNÇÃO PARA EXIBIR UMA MENSAGEM
+        function exibirMsg(){
+            console.log("boa tarde!");
+            console.log("hoje é " + Date());
+        }
+        exibirMsg();
+        //função com retorno de valor
+        function somar(v1, v2){ //colocando v1 e v2 dentro dos parênteses, ela recebe esses valores de fora da função
+            let resultado = 0;
+            resultado = v1 + v2;
+            return resultado;
+        }
+        let a = 10;
+        let b = 20;
+        somar(a,b);
+
+        //função com retorno de valor
+
+        function somar2(v1 = 5, v2 = 7){ //colocando v1 e v2 dentro dos parênteses, ela recebe esses valores de fora da função
+            let resultado = 0;
+            // resultado = v1 + v2;
+            return v1 + v2;
+        }
+        console.log(somar2());
+        const x = somar2(3,4);
+        console.log("Somar = " + x);
+
+        function subtrai(){
+            let x = 10;
+            let y = 5;
+            let resultado = x - y;
+            return resultado;
+        }
+        console.log("Subtrair = " + subtrai());
+
+        function calcular(){
+            let n1 = 28;
+            if (n1 %2 == 0){
+                return "Par";
+            }else {
+                return "Impar";
+            }
+        }
+        console.log(calcular());
+
+        //PARÂMETROS REST: sem definição da quantidade de parametros
+        function somar3(...numeros){
+            let tam = numeros.length;
+            let resultado = 0;
+            for(let i = 0; i < tam; i++){
+                resultado += numeros[i];
+                //resultado = resultador + numeros[i];
+            }
+            return resultado;
+        }
+        console.log(somar3(10,2,41,8));
+    </script>
+</body>
+</html>
