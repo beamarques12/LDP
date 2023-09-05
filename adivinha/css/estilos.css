@@ -1,0 +1,94 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color: aliceblue;
+}
+
+body {
+   font-family: Arial, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 20px;
+}
+
+h1 {
+   font-family: 'Rancho', cursive;
+   font-size: 3.5rem;
+   font-weight: 400;
+}
+
+
+.main {
+   min-height: 70vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.game {
+   box-shadow: 10px 5px 15px #477348;
+}
+
+.game,
+form {
+   background-color: #3c803e;
+   padding: 1.8rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.game>div {
+   padding: 0.5rem;
+}
+
+.form input,
+.form label,
+.form button {
+   margin-top: 1rem;
+}
+
+.form input,
+.form button {
+   font-size: inherit;
+   font-family: inherit;
+   padding: 0.5rem;
+   color: #3b0404;
+}
+
+.form button {
+   cursor: pointer;
+   color: black;
+   text-align: center;
+}
+
+.form button:hover {
+   filter: opacity(0.8);
+}
+
+#cabeçalho{
+   display: flex;
+   justify-content: center;
+   padding: 0;
+
+}
+
+
+img{
+   height: 80px;
+   width: 200px;  
+}
+
+footer, h2{
+   padding: 7px;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   background-color: #3c803e;
+   color: white;
+   font-family: 'Patua One';
+}
+

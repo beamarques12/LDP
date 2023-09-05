@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/estilos.css">
+   <title>Jogo Adivinha</title>
+   <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <!-- HTML -->
+   <div id="cabeçalho">
+   <img src="img/ifsp.png" alt="" >
+</div>
+   <main class="main">
+      <section class="game">
+         <h1>Qual é o número?</h1>
+         <div class="status" id="status">Adivinhe o número sorteado</div>
+         <div class="tentativa" id="tentativa">Tentativa: 0</div>
+         <form class="form" id="form">
+            <label id="usuario">Insira seu nome<br>
+               <input type="text" name="usuario" required><br>
+               <button id="btnUsuario">Cadastrar</button>
+            </label>
+            <label>Chute um número entre 0 e 100<br>
+               <input type="number" name="chute" id="chute" required>
+            </label>
+            <button id="btnVerifica">Verificar</button>
+         </form>
+      </section>
+   </main>
+   <script src="js/script.js">
+      
+   </script>
+   <footer>
+      <h5>Beatriz Marques</h5>
+      <h5>2° ano de Informática</h5>
+   </footer>
+</body>
+</html>
