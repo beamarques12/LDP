@@ -1,5 +1,5 @@
 const jogoAdivinha = {
-  semente: 100,
+  semente: 50,
   tentativa: 0,
   numeroSorteado: function geraValorAleatorio() {
     return Math.round(Math.random() * this.semente);
@@ -12,11 +12,14 @@ const tentativa = document.getElementById("tentativa");
 const chute = document.getElementById("chute");
 const apagarusuario = document.getElementById("nomeusuario");
 const label = document.getElementById("usuario");
-const usuario = document.getElementsByName("usuario");
+const usuario = document.getElementById("nome");
 const btnUsuario = document.getElementById("btnUsuario");
+usuario.value = "";
+chute.value = "";
 
 let numeroSorteado = jogoAdivinha.numeroSorteado();
 btnUsuario.addEventListener("click", limpar);
+console.log(numeroSorteado);
 
 function atualizarTentativa(tentativa, valor) {
   if (valor > 1) {
@@ -34,15 +37,15 @@ function reiniciar() {
   const br2 = document.createElement("br");
   const label = document.createElement("label");
   const usuario = document.createElement("input");
-  const btnUsuario = document.createElement("button");
+  const btnUsuario2 = document.createElement("button");
+  btnUsuario2.addEventListener("click", limpar);
   usuario.value = "";
-  btnUsuario.innerText = "Cadastrar";
+  btnUsuario2.innerText = "Cadastrar";
   label.innerHTML = "Insira seu nome";
   form.prepend(label);
   label.appendChild(br2);
   label.appendChild(usuario);
-  label.appendChild(br);
-  label.appendChild(btnUsuario);
+  label.appendChild(btnUsuario2);
   btnVerifica.innerText = "Verificar";
   tentativa.innerHTML = "Tentativa :  0";
   chute.disabled = false;
@@ -73,7 +76,7 @@ formAdivinha.addEventListener("submit", function (event) {
 
   if (numeroSorteado == chute.value) {
     status.innerHTML =
-      '<span style="color:#00C853">Parabéns, + usuario.value + você é um gênio da adivinhação!!</span>;'
+      '<span style="color:#00C853"> Parabéns, ' + usuario.value + ', você é um gênio da adivinhação!!</span>';
     chute.disabled = true;
     btnVerifica.innerText = "Tentar novamente?";
     btnVerifica.addEventListener("click", reiniciar);
