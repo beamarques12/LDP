@@ -4,14 +4,18 @@ const personagens = [
     'mario', 'luigi', 'peach', 'toad', 'yoshi', 'donkey', 'bu', 'bowser'
 ]
 
+
+
 let primeiraCarta = '';
 let segundaCarta = '';
 
 const checagem = () => {
     const primeiroPersonagem = primeiraCarta.getAttribute('data-character');
     const segundoPersonagem = segundaCarta.getAttribute('data-character');
+    console.log(primeiroPersonagem);
+    console.log(segundoPersonagem);
     if(primeiroPersonagem === segundoPersonagem){
-
+            
     } else {
         setTimeout (() => {
             primeiraCarta.classList.remove('revelar-carta');
@@ -19,7 +23,8 @@ const checagem = () => {
             primeiraCarta = '';
             segundaCarta = '';
         }, 500);
-
+        const vida = document.querySelector("header");
+        vida.parentNode.removeChild(vida);
 
     }
 }
@@ -50,12 +55,13 @@ const criarCarta =  (personagem) => {
     back.className = 'face back';
 
     front.style.backgroundImage = `url('imagens/${personagem}.png')`
+
     carta.appendChild(front);
     carta.appendChild(back);
 
     carta.addEventListener('click', revelarCarta)
 
-    carta.setAttribute('data-personagem', personagem)
+    carta.setAttribute('data-character', personagem)
     return carta;
 }
 

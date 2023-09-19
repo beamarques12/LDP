@@ -1,0 +1,14 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+#figura{
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    border: 1px solid #000;
+    background-color: blueviolet;
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+}
